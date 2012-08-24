@@ -1,0 +1,8 @@
+#! /bin/sh
+mkdir -p wiki
+MD_TO_CONF=~/nova/bedlam/md_to_conf
+for i in *.md
+do
+	$MD_TO_CONF -o wiki/`basename $i .md` $i
+done
+cp *.png wiki/

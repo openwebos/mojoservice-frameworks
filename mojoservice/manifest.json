@@ -1,0 +1,19 @@
+{
+	"files":
+	{
+		"javascript":
+		[
+			"prologue.js",
+			"controller_app.js",
+			"method_dispatcher.js",
+			"controller_service.js",
+			"controller_command.js",
+			"activitymanager.js",
+			"futurefactory.js"
+		],
+		"schema":
+		[
+			"services-schema.json"
+		]
+	}
+}

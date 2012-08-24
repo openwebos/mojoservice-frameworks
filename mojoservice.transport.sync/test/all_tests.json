@@ -1,0 +1,7 @@
+[
+{
+	"title": "Sync command error handling tests",
+	"source": "test/syncerrorhandlingtests.js",
+	"testFunction": "SyncErrorHandlingTests"
+}
+]

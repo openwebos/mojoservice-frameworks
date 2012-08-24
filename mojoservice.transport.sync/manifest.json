@@ -1,0 +1,19 @@
+{
+	"files":
+	{
+		"javascript":
+		[
+			"prologue.js",
+			"syncactivityhelper.js",
+			"handlers/synchandler.js",
+			"commands/synccommand.js",
+			"commands/refetchphotocommand.js",
+			"commands/createaccountcommand.js",
+			"commands/enabledaccountcommand.js",
+			"commands/deleteaccountcommand.js",
+			"commands/credentialschangedcommand.js",
+			"clients/authsyncclient.js",
+			"utils/utils.js"
+		]
+	}
+}

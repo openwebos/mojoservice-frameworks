@@ -1,0 +1,7 @@
+[
+	{
+		"title": "DbHandler Tests",
+		"source": "test/dbhandler_tests.js",
+		"testFunction": "DbHandlerTests"
+	}
+]

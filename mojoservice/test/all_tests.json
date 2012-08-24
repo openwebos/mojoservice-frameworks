@@ -1,0 +1,22 @@
+[
+	{
+		"title": "AppAssistant Tests",
+		"source": "test/appassistanttests.js",
+		"testFunction": "AppAssistantTests"
+	},
+	{
+		"title": "CommandAssistant Tests",
+		"source": "test/commandtests.js",
+		"testFunction": "CommandTests"
+	},
+	{
+		"title": "Subscription Tests",
+		"source": "test/subscriptiontests.js",
+		"testFunction": "SubscriptionTests"
+	},
+	{
+		"title": "Watch Tests",
+		"source": "test/watchtests.js",
+		"testFunction": "WatchTests"
+	},
+]

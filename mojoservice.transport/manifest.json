@@ -1,0 +1,24 @@
+{
+	"files":
+	{
+		"javascript":
+		[
+			"errors.js",
+			"prologue.js",
+			"client.js",
+			"command.js",
+			"connection.js",
+			"handler.js",
+			"priority.js",
+			"syncstatusmanager.js",
+			"connections/connectionfactorybuilder.js",
+			"connections/httpconnection.js",
+			"connections/httpoauthconnection.js",
+			"connections/httpoauthconnectionfactorybuilder.js",	
+			"handlers/handlerfactorybuilder.js",
+			"handlers/dbhandler.js",
+			"commands/oauthcommand.js",
+			"services/serviceassistantbuilder.js"
+		]
+	}
+}
