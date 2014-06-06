@@ -245,7 +245,7 @@ var SyncCommand = exports.SyncCommand = Class.create(Transport.Command,
 
 	getPeriodicSyncActivity: function() {
 		var name = this.getPeriodicSyncActivityName();
-		var details = PalmCall.call("palm://com.palm.activitymanager", "getDetails", {"activityName": name}).then(this, function(future) {
+		var details = PalmCall.call("palm://com.palm.activitymanager", "getDetails", {"activityName": name, "current": false, "internal": false}).then(this, function(future) {
 			// got it - return details
 			future.result = future.result.activity;
 		},
