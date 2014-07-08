@@ -126,7 +126,7 @@ exports.EnabledAccountCommand = Class.create(Transport.Command,
 				function(future) {
 					var name = "Periodic Sync:"+this.controller.service.name + ":" + this.client.clientId; // TODO: merge this with code in SyncCommand
 					// get the activityId from ActivityManager
-					return PalmCall.call("palm://com.palm.activitymanager", "getDetails", {"activityName":name}); 
+					return PalmCall.call("palm://com.palm.activitymanager", "getDetails", {"activityName":name, "current": false, "internal": false}); 
 				},
 				function(future)
 				{
@@ -145,7 +145,7 @@ exports.EnabledAccountCommand = Class.create(Transport.Command,
 					}
 					var name = "SyncOnEdit:"+this.controller.service.name + ":" + this.client.clientId; // TODO: merge this with code in SyncCommand - started common implementation: syncactivityhelper.js
 					// get the activityId from ActivityManager
-					return PalmCall.call("palm://com.palm.activitymanager", "getDetails", {"activityName":name}); 
+					return PalmCall.call("palm://com.palm.activitymanager", "getDetails", {"activityName":name, "current": false, "internal": false}); 
 				},
 				function(future)
 				{
