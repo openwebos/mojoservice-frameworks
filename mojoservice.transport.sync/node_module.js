@@ -49,7 +49,7 @@ var SyncActivityHelper = SyncActivityHelper = Class.create({
 	getSyncActivityId: function(type) {
 		var name = type + ":" + this.serviceName + ":" + this.accountId; 
 		// get the activityId from ActivityManager
-		return PalmCall.call("palm://com.palm.activitymanager", "getDetails", {"activityName":name}).then(function (future) {
+		return PalmCall.call("palm://com.palm.activitymanager", "getDetails", {"activityName":name, "current": false, "internal": false}).then(function (future) {
 			var activityId = future.result.activity.activityId;
 			if (future.exception) {
 				console.error("ignoring exception from Activity Manager while fetching sync activityId: ", activityId);
@@ -851,7 +851,7 @@ var SyncCommand = exports.SyncCommand = Class.create(Transport.Command,
 
 	getPeriodicSyncActivity: function() {
 		var name = this.getPeriodicSyncActivityName();
-		var details = PalmCall.call("palm://com.palm.activitymanager", "getDetails", {"activityName": name}).then(this, function(future) {
+		var details = PalmCall.call("palm://com.palm.activitymanager", "getDetails", {"activityName": name, "current": false, "internal": false}).then(this, function(future) {
 			// got it - return details
 			future.result = future.result.activity;
 		},
@@ -2342,7 +2342,7 @@ exports.EnabledAccountCommand = Class.create(Transport.Command,
 				function(future) {
 					var name = "Periodic Sync:"+this.controller.service.name + ":" + this.client.clientId; // TODO: merge this with code in SyncCommand
 					// get the activityId from ActivityManager
-					return PalmCall.call("palm://com.palm.activitymanager", "getDetails", {"activityName":name}); 
+					return PalmCall.call("palm://com.palm.activitymanager", "getDetails", {"activityName":name, "current": false, "internal": false}); 
 				},
 				function(future)
 				{
@@ -2361,7 +2361,7 @@ exports.EnabledAccountCommand = Class.create(Transport.Command,
 					}
 					var name = "SyncOnEdit:"+this.controller.service.name + ":" + this.client.clientId; // TODO: merge this with code in SyncCommand - started common implementation: syncactivityhelper.js
 					// get the activityId from ActivityManager
-					return PalmCall.call("palm://com.palm.activitymanager", "getDetails", {"activityName":name}); 
+					return PalmCall.call("palm://com.palm.activitymanager", "getDetails", {"activityName":name, "current": false, "internal": false}); 
 				},
 				function(future)
 				{

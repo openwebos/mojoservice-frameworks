@@ -21,7 +21,7 @@ var SyncActivityHelper = SyncActivityHelper = Class.create({
 	getSyncActivityId: function(type) {
 		var name = type + ":" + this.serviceName + ":" + this.accountId; 
 		// get the activityId from ActivityManager
-		return PalmCall.call("palm://com.palm.activitymanager", "getDetails", {"activityName":name}).then(function (future) {
+		return PalmCall.call("palm://com.palm.activitymanager", "getDetails", {"activityName":name, "current": false, "internal": false}).then(function (future) {
 			var activityId = future.result.activity.activityId;
 			if (future.exception) {
 				console.error("ignoring exception from Activity Manager while fetching sync activityId: ", activityId);
